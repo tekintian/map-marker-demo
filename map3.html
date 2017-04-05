@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<title>地图标注样式</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { margin: 0px; padding: 0px; }
+body { font: 400 16px/20px Tahoma,"hiragino sans gb","Microsoft Yahei",simsun,Verdana,Geneva,Helvetica; color: rgb(102, 102, 102); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+img { border: 0px none;vertical-align: top; }
+ol, ul, li { list-style: outside none none; }
+h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+input, select, textarea, button { font-family: inherit; font-size: 100%; margin: 0px; vertical-align: baseline; outline: 0px none; }
+dfn, i { font-style: normal; }
+a { color: rgb(102, 102, 102); text-decoration: none; }
+a:hover { color: rgb(238, 104, 94); }
+.mt5 { margin-top: 5px; }
+.mt20 { margin-top: 20px; }
+.mt40 { margin-top: 40px; }
+.mb5 { margin-bottom: 5px; }
+.mb10 { margin-bottom: 10px; }
+.ml10 { margin-left: 10px; }
+.ml20 { margin-left: 20px; }
+.mr10 { margin-right: 10px; }
+.pt20 { padding-top: 20px; }
+.pb20 { padding-bottom: 20px; }
+.t12 { font-size: 12px ! important; }
+.t14 { font-size: 14px ! important; }
+.t16 { font-size: 16px ! important; }
+.light { color: rgb(153, 153, 153); }
+.tc { text-align: center ! important; }
+.clx::before, .clx::after { content: ""; display: table; }
+.clx::after { clear: both; }
+.clx {  }
+.icon { display: inline-block; width: 40px; height: 40px; background: transparent url('e_list.png') no-repeat scroll 0px -98px; }
+.icon_addr { background-position: 0px -98px; }
+.icon_contact { background-position: -40px -98px; }
+.icon_business { background-position: -80px -98px; }
+/* baidumap 展示区域样式 */
+.mapview { height:30rem; margin-top: 60px; background: rgb(204, 204, 204) none repeat scroll 0% 0%; }
+
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="mt40">
+            <div>
+                <i class="icon icon_addr"></i>
+            </div>
+            <p>北　京 · 海淀区永澄北路2号院1号楼A座4层405-390号（北京总部）</p>
+            <p>云　南 · 昆明市环城南路668号云纺国际商厦B座1301（营销总部）</p>
+        </div>
+        <!-- for map -->
+        <div class="mapview" id="map_wrapper">
+
+        </div>
+        <script type='text/javascript' src='map.js?v=1.0'></script>
+        <script>
+            loadmap({
+                provider: "bmap",
+                def_lat: "40.084616",
+                def_lng: "116.233808",
+                scroll_wheel: true,
+                info_content: '<div class="t16 mb5"><B>医修库北京总部</B></div><div class="t12 light mb10">电话: 010-57266033 Email: zgdcf@msn.com <BR>北京市 海淀区永澄北路2号院1号楼A座4层405-390号</div>',
+                jump_content: '医修库北京总部'
+            });
+        </script>
+        <p></p>
+        <div class="button navbar-default">
+        <a class="button" href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank">百度坐标拾趣</a>
+         <a class="button" href="http://lbs.qq.com/tool/getpoint/" target="_blank">QQ坐标拾趣</a>
+        </div>
+    </div>
+</body>
+
+</html>
